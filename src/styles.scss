@@ -1,0 +1,24 @@
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--mat-app-background-color);
+  color: var(--mat-app-text-color);
+}
+
+
+.container {
+  max-width: 520px;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 2rem auto;
+  @media screen and (max-width: 540px){
+    width: calc(100% - 2rem);
+  }
+}

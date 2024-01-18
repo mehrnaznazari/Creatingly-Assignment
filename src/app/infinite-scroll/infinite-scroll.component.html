@@ -1,0 +1,25 @@
+<div class="wrapper">
+  @if (loading) {
+    <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+
+  } @else {
+    <ng-container [ngTemplateOutlet]="postsList"></ng-container>
+  }
+
+  <ng-template #postsList>
+    @for (post of posts; track post.id) {
+      <mat-card class="post" [style.height.px]="post.height">
+        <mat-card-header>
+          <mat-card-title>post {{ post.id }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          {{ post.content }}
+        </mat-card-content>
+      </mat-card>
+    }
+
+    <div appInfiniteScroll (scrolled)="onScroll()"></div>
+  </ng-template>
+</div>
+
+
